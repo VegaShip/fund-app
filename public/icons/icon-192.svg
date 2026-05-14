@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <rect width="192" height="192" rx="32" fill="#1a1a2e"/>
+  <text x="96" y="80" text-anchor="middle" font-family="Arial,sans-serif" font-size="72" font-weight="bold" fill="#3498db">F</text>
+  <text x="96" y="140" text-anchor="middle" font-family="Arial,sans-serif" font-size="32" font-weight="bold" fill="#e74c3c">↑</text>
+  <polyline points="40,160 70,130 90,145 120,110 152,140" fill="none" stroke="#2ecc71" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

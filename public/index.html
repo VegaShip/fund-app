@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>基金筛选 - 实时收益率</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 加载遮罩 -->
+  <div id="loadingOverlay" class="loading-overlay hide">
+    <div class="loading-spinner"><i class="fas fa-spinner fa-pulse"></i></div>
+    <div class="loading-text">加载中...</div>
+  </div>
+
+  <!-- 顶部状态栏 -->
+  <header id="appHeader" class="app-header">
+    <div class="header-left" id="headerLeft"></div>
+    <h1 class="header-title" id="headerTitle">基金筛选</h1>
+    <div class="header-right" id="headerRight">
+      <button class="header-btn" id="searchBtn" onclick="App.toggleSearch()" title="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="header-btn" id="refreshBtn" onclick="refreshCurrentPage()" title="刷新">
+        <i class="fas fa-sync-alt"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- 主容器 -->
+  <main id="mainContent" class="main-content"></main>
+
+  <!-- 搜索浮层 -->
+  <div id="searchOverlay" class="search-overlay hide">
+    <div class="search-bar">
+      <button class="search-back" onclick="App.toggleSearch()"><i class="fas fa-arrow-left"></i></button>
+      <input type="text" id="searchInput" class="search-input" placeholder="搜索基金代码或名称..." autocomplete="off">
+      <button class="search-clear" id="searchClear" onclick="App.clearSearch()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="search-results" id="searchResults">
+      <div class="search-hint"><i class="fas fa-search"></i> 输入基金代码或名称搜索</div>
+    </div>
+  </div>
+
+  <!-- 底部导航 -->
+  <nav id="bottomNav" class="bottom-nav">
+    <a class="nav-item active" data-page="home" href="#home">
+      <i class="fas fa-home"></i><span>首页</span>
+    </a>
+    <a class="nav-item" data-page="funds" href="#funds">
+      <i class="fas fa-list"></i><span>基金</span>
+    </a>
+    <a class="nav-item" data-page="screen" href="#screen">
+      <i class="fas fa-filter"></i><span>筛选</span>
+    </a>
+    <a class="nav-item" data-page="compare" href="#compare">
+      <i class="fas fa-chart-bar"></i><span>对比</span>
+    </a>
+    <a class="nav-item" data-page="favorites" href="#favorites">
+      <i class="fas fa-star"></i><span>自选</span>
+    </a>
+  </nav>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hide"></div>
+
+  <!-- 脚本 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/pages/home.js"></script>
+  <script src="js/pages/funds.js"></script>
+  <script src="js/pages/detail.js"></script>
+  <script src="js/pages/screen.js"></script>
+  <script src="js/pages/compare.js"></script>
+  <script src="js/pages/favorites.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

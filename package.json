@@ -1,0 +1,18 @@
+{
+  "name": "fund-screening-app",
+  "version": "1.0.0",
+  "description": "基金筛选应用 - 实时收益率计算",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "public": "node tunnel.js",
+    "tunnel": "node tunnel.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "iconv-lite": "^0.6.3",
+    "isomorphic-git": "^1.37.6",
+    "localtunnel": "^2.0.2",
+    "node-fetch": "^2.7.0"
+  }
+}
